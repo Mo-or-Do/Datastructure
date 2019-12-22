@@ -11,7 +11,7 @@ public:
 	int key;
 	int data;
 };
-//test
+//test or test
 
 class bst//binary search tree
 {
