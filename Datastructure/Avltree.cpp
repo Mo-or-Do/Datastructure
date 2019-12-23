@@ -37,7 +37,7 @@ void avl_tree::avlInsert(bst_node** root, int data)
 		}
 	}
 
-	Rebalance(*root);
+	Rebalance(root);
 }
 
 bst_node* avl_tree::avlSearch(bst_node* root, int data)
@@ -128,7 +128,7 @@ bst_node* avl_tree::avlDelete(bst_node** root, int data)
 	*root = vRoot->right;
 	delete vRoot;
 
-	Rebalance(*root);
+	Rebalance(root);
 
 	return NULL;//temp
 }
@@ -183,17 +183,23 @@ int avl_tree::getKey(bst_node* cNode)
 	return cNode->key;
 }
 
-void avl_tree::Rebalance(bst_node* root)
+bst_node* avl_tree::Rebalance(bst_node** root)
 {
-	int hDiff = GetheightDiff(root);
+	int hDiff = GetheightDiff(*root);
 
 	if (hDiff > 1)
 	{
-
+		if (GetheightDiff((*root)->left) > 0)
+			*root = RotateLL(*root);
+		else
+			*root = RotateLR(*root);
 	}
 	else if (hDiff < -1)
 	{
-
+		if (GetheightDiff((*root)->left) < 0)
+			*root = RotateRR(*root);
+		else
+			*root = RotateRL(*root);
 	}
 }
 

@@ -15,7 +15,7 @@ public:
 	void RemoveRightsubtree(bst_node* pnode);
 	void ChangeLeftsubtree(bst_node* pnode);
 	void ChangeRightsubtree(bst_node* pnode);
-	void Rebalance(bst_node* root);
+	bst_node* Rebalance(bst_node** root);
 	int Getheight(bst_node* bst);
 	int GetheightDiff(bst_node* bst);
 	bst_node* RotateLL(bst_node* bst);
