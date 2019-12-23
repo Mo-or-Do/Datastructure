@@ -201,6 +201,8 @@ bst_node* avl_tree::Rebalance(bst_node** root)
 		else
 			*root = RotateRL(*root);
 	}
+
+	return (*root);
 }
 
 int avl_tree::Getheight(bst_node* bst)
