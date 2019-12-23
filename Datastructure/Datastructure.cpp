@@ -32,45 +32,8 @@ void InorderTraverse(bst_node* bt, VisitFuncPtr action)
 	InorderTraverse(bt->left, action);
 	action(bt->data);
 	InorderTraverse(bt->right, action);
-}
-
-void printdata(int num)
-{
-	cout << num << endl;
-}
+}//This function is used for bst.
 
 void main()
 {
-	bst_node* root = NULL, *sNode = NULL;
-
-	bst b;
-	b.bstInsert(&root, 9);
-	b.bstInsert(&root, 1);
-	b.bstInsert(&root, 6);
-	b.bstInsert(&root, 2);
-	b.bstInsert(&root, 8);
-	b.bstInsert(&root, 3);
-	b.bstInsert(&root, 5);
-
-	InorderTraverse(root, printdata);
-	cout << endl;
-
-	b.bstDelete(&root, 9);
-	/*sNode = b.bstSearch(root, 1);
-	if (sNode == NULL)
-		cout << "Search Fail" << endl;
-	else
-
-
-		cout << "key value f: " << sNode->data<<endl;
-		h
-	b.bstDelete(root, 6);
-
-	sNode = b.bstSearch(root, 6);
-	if (sNode == NULL)
-		cout << "Search Fail" << endl;
-	else
-		cout << "key value : " << sNode->data << endl;*/
-
-	InorderTraverse(root, printdata);
 }

@@ -14,7 +14,7 @@ public:
 //test or test
 
 class bst//binary search tree
-{
+{ 
 	bst_node* rootnode;
 public:
 	void bstInsert(bst_node** root, int data);
