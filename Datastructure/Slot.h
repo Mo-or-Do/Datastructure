@@ -16,5 +16,5 @@ typedef struct _slot
 {
 	Key key;
 	Value val;
-	enum SlotStatus status;
+	//enum SlotStatus status;//This code is not used in closed addressing method.
 } Slot;

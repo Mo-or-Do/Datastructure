@@ -13,3 +13,8 @@ typedef struct _table
 	list<Slot*> tbl[MAX_TBL];
 	HashFunc* hf;
 } Table;
+
+void TBLInit(Table* pt, HashFunc* k);
+void TBLInsert(Table* pt, Key k, Value v);
+Value TBLDelete(Table* pt, Key k);
+Value TBLSearch(Table* pt, Key k);
