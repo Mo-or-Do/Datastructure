@@ -5,6 +5,26 @@ void avl_tree::avlInsert(bst_node** root, int data)
 	bst_node* pNode = NULL;
 	bst_node* cNode = *root;
 
+	if ((*root) == NULL)
+	{
+		*root = new bst_node;
+		(*root)->data = data;
+	}
+	else if (getData(*root) > data)
+	{
+		avlInsert(&((*root)->left), data);
+		(*root) = Rebalance(root);
+	}
+	else if (getData(*root) < data)
+	{
+		avlInsert(&((*root)->right), data);
+		(*root) = Rebalance(root);
+	}
+	else
+	{
+	}
+
+	/*
 	while (cNode != NULL)
 	{
 		if (data == this->getData(cNode))
@@ -37,7 +57,7 @@ void avl_tree::avlInsert(bst_node** root, int data)
 		}
 	}
 
-	Rebalance(root);
+	Rebalance(root);*/
 }
 
 bst_node* avl_tree::avlSearch(bst_node* root, int data)
@@ -196,7 +216,7 @@ bst_node* avl_tree::Rebalance(bst_node** root)
 	}
 	else if (hDiff < -1)
 	{
-		if (GetheightDiff((*root)->left) < 0)
+		if (GetheightDiff((*root)->right) < 0)
 			*root = RotateRR(*root);
 		else
 			*root = RotateRL(*root);
