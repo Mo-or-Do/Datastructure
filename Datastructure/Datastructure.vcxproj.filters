@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\Hash">
+      <UniqueIdentifier>{97e065ee-f28c-4dc6-8833-475fe2b4bb6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Hash">
+      <UniqueIdentifier>{325f925f-cd6e-464d-b6c1-1f9c07b8f37d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Datastructure.cpp">
@@ -48,6 +54,15 @@
     <ClCompile Include="Avltree.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>소스 파일\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="Slot.cpp">
+      <Filter>소스 파일\Hash</Filter>
+    </ClCompile>
+    <ClCompile Include="Table.cpp">
+      <Filter>소스 파일\Hash</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Stack.h">
@@ -79,6 +94,15 @@
     </ClInclude>
     <ClInclude Include="Avltree.h">
       <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Slot.h">
+      <Filter>헤더 파일\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>헤더 파일\Hash</Filter>
+    </ClInclude>
+    <ClInclude Include="Table.h">
+      <Filter>헤더 파일\Hash</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

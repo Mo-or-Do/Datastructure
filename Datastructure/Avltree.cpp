@@ -23,42 +23,7 @@ void avl_tree::avlInsert(bst_node** root, int data)
 	else
 	{
 	}
-
-	/*
-	while (cNode != NULL)
-	{
-		if (data == this->getData(cNode))
-			return;
-
-		pNode = cNode;
-
-		if (getData(cNode) > data)
-			cNode = cNode->left;
-		else
-			cNode = cNode->right;
-	}
-
-	if (pNode == NULL)
-	{
-		(*root) = new bst_node;
-		(*root)->data = data;
-	}
-	else
-	{
-		if (getData(pNode) > data)
-		{
-			pNode->left = new bst_node;
-			pNode->left->data = data;
-		}
-		else
-		{
-			pNode->right = new bst_node;
-			pNode->right->data = data;
-		}
-	}
-
-	Rebalance(root);*/
-}
+}//어케생각하노시바ㄹ련아
 
 bst_node* avl_tree::avlSearch(bst_node* root, int data)
 {
@@ -223,7 +188,7 @@ bst_node* avl_tree::Rebalance(bst_node** root)
 	}
 
 	return (*root);
-}
+}//Amazing...
 
 int avl_tree::Getheight(bst_node* bst)
 {

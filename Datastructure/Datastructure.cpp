@@ -36,22 +36,6 @@ void InorderTraverse(bst_node* bt, VisitFuncPtr action)
 
 void main()
 {
-	bst_node* root = NULL;
-	avl_tree test;
-
-	test.avlInsert(&root, 1);
-	test.avlInsert(&root, 2);
-	test.avlInsert(&root, 3);
-	test.avlInsert(&root, 4);
-	test.avlInsert(&root, 5);
-	test.avlInsert(&root, 6);
-	test.avlInsert(&root, 7);
-	test.avlInsert(&root, 8);
-	test.avlInsert(&root, 9);
-	test.avlInsert(&root, 10);
-	test.avlInsert(&root, 11);
-
-	cout << test.getData(root) << endl;
-	cout << test.getData(root->left) << endl;
-	cout << test.getData(root->right) << endl;
 }
+
+

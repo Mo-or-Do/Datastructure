@@ -157,10 +157,13 @@
     <ClCompile Include="Datastructure.cpp" />
     <ClCompile Include="ExpressionTree.cpp" />
     <ClCompile Include="heap.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="search.cpp" />
+    <ClCompile Include="Slot.cpp" />
     <ClCompile Include="sort.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="Table.cpp" />
     <ClCompile Include="TransInorderToPostorder.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -169,10 +172,13 @@
     <ClInclude Include="BinaryTree.h" />
     <ClInclude Include="ExpressionTree.h" />
     <ClInclude Include="heap.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="search.h" />
+    <ClInclude Include="Slot.h" />
     <ClInclude Include="sort.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="Table.h" />
     <ClInclude Include="TransInorderToPostorder.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
