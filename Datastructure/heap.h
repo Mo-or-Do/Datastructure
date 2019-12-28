@@ -1,16 +1,18 @@
 #pragma once
 #include <iostream>
+#include "ALEdge.h"
 using namespace std;
 
-typedef int PriorityComp(int d1, int d2);
+typedef Edge Data;
+typedef int PriorityComp(Data d1, Data d2);
 
 class HeapNode
 {
 public:
 	HeapNode();
-	HeapNode(int data);
+	HeapNode(Data data);
 	int priority;
-	int data;
+	Data data;
 };
 
 class Heap
@@ -22,7 +24,7 @@ public:
 	Heap(PriorityComp* action);
 	bool IsEmpty();
 	void Insert(HeapNode* hn);
-	int Delete();
+	Data* Delete();
 	int GetParentIDX(int idx);
 	int GetLeftChildIDX(int idx);
 	int GetRightChildIDX(int idx);

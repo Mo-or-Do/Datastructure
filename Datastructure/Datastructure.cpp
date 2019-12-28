@@ -15,19 +15,23 @@ using namespace std;
 
 int main()
 {
-	ALGraph* p = (ALGraph*)malloc(sizeof(ALGraph));
-	GraphInit(p, 6);
+	ALGraph graph;
+	GraphInit(&graph, 6);
 
-	AddEdge(p, A, B);
-	AddEdge(p, A, C);
-	AddEdge(p, B, C);
-	AddEdge(p, C, D);
-	AddEdge(p, D, E);
-	AddEdge(p, D, F);
+	AddEdge(&graph, A, B, 9);
+	AddEdge(&graph, B, C, 2);
+	AddEdge(&graph, A, C, 12);
+	AddEdge(&graph, A, D, 8);
+	AddEdge(&graph, D, C, 6);
+	AddEdge(&graph, A, F, 11);
+	AddEdge(&graph, F, D, 4);
+	AddEdge(&graph, E, D, 3);
+	AddEdge(&graph, E, C, 7);
+	AddEdge(&graph, F, E, 13);
 
-	ShowGraphEdgeInfo(p);
-	BFS_ShowGraphVertex(p, A); cout << endl;
-	GraphDestroy(p);
+	ConKruskalMst(&graph);
+	ShowGraphEdgeInfo(&graph);
+	ShowGraphEdgeWeightInfo(&graph);
 
 	return 0;
 }

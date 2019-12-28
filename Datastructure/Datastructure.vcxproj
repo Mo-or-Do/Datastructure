@@ -162,12 +162,15 @@
     <ClCompile Include="Queue.cpp" />
     <ClCompile Include="search.cpp" />
     <ClCompile Include="Slot.cpp" />
-    <ClCompile Include="sort.cpp" />
+    <ClCompile Include="sort.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="Stack.cpp" />
     <ClCompile Include="Table.cpp" />
     <ClCompile Include="TransInorderToPostorder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ALEdge.h" />
     <ClInclude Include="ALGraph.h" />
     <ClInclude Include="Avltree.h" />
     <ClInclude Include="BinarySearchTree.h" />
@@ -178,7 +181,9 @@
     <ClInclude Include="Queue.h" />
     <ClInclude Include="search.h" />
     <ClInclude Include="Slot.h" />
-    <ClInclude Include="sort.h" />
+    <ClInclude Include="sort.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="Stack.h" />
     <ClInclude Include="Table.h" />
     <ClInclude Include="TransInorderToPostorder.h" />

@@ -5,7 +5,7 @@ HeapNode::HeapNode()
 
 }
 
-HeapNode::HeapNode(int data)
+HeapNode::HeapNode(Data data)
 {
 	this->data = data;
 	this->priority = 0;
@@ -48,17 +48,18 @@ void Heap::Insert(HeapNode* hn)
 	}
 }//Change complete
 
-int Heap::Delete()
+Data* Heap::Delete()
 {
 	if (IsEmpty())
-		return 0;
+		return NULL;
 
 	HeapNode* temp;
-	int idx = 1, deleteData, childidx;
+	int idx = 1, childidx;
+	Data* deleteData;
 
-	deleteData = arr[idx]->data;
+	deleteData = &arr[idx]->data;
 
-	delete arr[idx];
+	//delete arr[idx];
 
 	numofdata--;
 
@@ -119,5 +120,5 @@ int Heap::GetHighPriorChild(int idx)
 void Heap::print()
 {
 	for (int i = 1; i < numofdata; i++)
-		cout << arr[i]->data << endl;
+		cout << arr[i]->data.weight << endl;
 }
