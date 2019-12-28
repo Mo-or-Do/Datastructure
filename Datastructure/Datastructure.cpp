@@ -16,17 +16,17 @@ using namespace std;
 int main()
 {
 	ALGraph* p = (ALGraph*)malloc(sizeof(ALGraph));
-	GraphInit(p, 5);
+	GraphInit(p, 6);
 
 	AddEdge(p, A, B);
 	AddEdge(p, A, C);
-	AddEdge(p, A, D);
-	AddEdge(p, A, E);
 	AddEdge(p, B, C);
 	AddEdge(p, C, D);
 	AddEdge(p, D, E);
+	AddEdge(p, D, F);
 
 	ShowGraphEdgeInfo(p);
+	BFS_ShowGraphVertex(p, A); cout << endl;
 	GraphDestroy(p);
 
 	return 0;

@@ -39,7 +39,6 @@ void ShowGraphEdgeInfo(ALGraph* pg)
 
 void ShowVertexInfo(ALGraph* pg, int num)
 {
-	pg->visitInfo[num] = 1;
 	printf("%c ", num + 65);
 }
 
@@ -55,33 +54,76 @@ void DFS_ShowGraphVertex(ALGraph* pg, int startV)
 	list<int>::iterator it;
 	stack<int> stack;
 	int visitV = startV;
-	int nextV, visitFlag = 0;
+	int visitFlag = 0;
 
 	ShowVertexInfo(pg, visitV);
-	stack.push(visitV);
+	pg->visitInfo[visitV] = 1;
+	//stack.push(visitV);
 
 	while (1)
 	{
 		it = pg->adjlist[visitV].begin();
+		visitFlag = false;
 
-		for (it; it != pg->adjlist[visitV].end(); it++)
+		for (; it != pg->adjlist[visitV].end(); it++)
 		{
-			if (IsVisit(pg, (*it)))
+			if (!IsVisit(pg, (*it)))
 			{
+				stack.push(visitV);
+				visitV = (*it);
 				pg->visitInfo[(*it)] = 1;
 				ShowVertexInfo(pg, (*it));
-
+				visitFlag = 1;
+				break;
 			}
 		}
 
 		if (!visitFlag)
 		{
-
+			if (stack.empty())
+				break;
+			else
+			{
+				visitV = stack.top();
+				stack.pop();
+			}
 		}
 	}
-}
+
+	memset(pg->visitInfo, 0, sizeof(int) * pg->numV);
+}//so hard..
 
 void BFS_ShowGraphVertex(ALGraph* pg, int startV)
 {
+	list<int>::iterator it;
+	queue<int> que;
+	int visitV = startV;
+	int visitFlag = 0;
 
+	ShowVertexInfo(pg, visitV);
+	pg->visitInfo[visitV] = 1;
+	it = pg->adjlist[visitV].begin();
+	//stack.push(visitV);
+
+	while (1)
+	{
+		for (; it != pg->adjlist[visitV].end(); it++)
+		{
+			if (!IsVisit(pg, (*it)))
+			{
+				que.push((*it));
+				ShowVertexInfo(pg, (*it));
+				pg->visitInfo[(*it)] = 1;
+			}
+		}
+
+		if (que.empty())
+			break;
+
+		visitV = que.front();
+		it = pg->adjlist[visitV].begin();
+		que.pop();
+	}
+
+	memset(pg->visitInfo, 0, sizeof(int) * pg->numV);
 }
