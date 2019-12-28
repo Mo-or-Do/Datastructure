@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ALGraph.cpp" />
     <ClCompile Include="Avltree.cpp" />
     <ClCompile Include="BinarySearchTree.cpp" />
     <ClCompile Include="BinaryTree.cpp" />
@@ -167,6 +168,7 @@
     <ClCompile Include="TransInorderToPostorder.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ALGraph.h" />
     <ClInclude Include="Avltree.h" />
     <ClInclude Include="BinarySearchTree.h" />
     <ClInclude Include="BinaryTree.h" />

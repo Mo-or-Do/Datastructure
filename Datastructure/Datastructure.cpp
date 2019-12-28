@@ -1,5 +1,5 @@
 ﻿#include <iostream>
-#include "Table.h"
+#include "ALGraph.h"
 using namespace std;
 
 /*ExpTree exp;
@@ -13,53 +13,21 @@ using namespace std;
 	
 	*/
 
-int MyHashFunc(Key k)
-{
-	return (k % 100);
-}
-
 int main()
 {
-	Table mytbl;
+	ALGraph* p = (ALGraph*)malloc(sizeof(ALGraph));
+	GraphInit(p, 5);
 
-	Person* np;
-	Person* sp;
-	Person* rp;
-	
-	TBLInit(&mytbl, MyHashFunc);
+	AddEdge(p, A, B);
+	AddEdge(p, A, C);
+	AddEdge(p, A, D);
+	AddEdge(p, A, E);
+	AddEdge(p, B, C);
+	AddEdge(p, C, D);
+	AddEdge(p, D, E);
 
-	np = MakePersonData(990209 ,"Park", "Ansan");
-	TBLInsert(&mytbl, Getssn(np), np);
-	
-	np = MakePersonData(960609, "Ha", "Gangnam");
-	TBLInsert(&mytbl, Getssn(np), np);
-
-	np = MakePersonData(641106, "Mi", "Gangwon");
-	TBLInsert(&mytbl, Getssn(np), np);
-
-	sp = TBLSearch(&mytbl, 990209);
-	if (sp != NULL)
-		ShowPerInfo(sp);
-
-	sp = TBLSearch(&mytbl, 960609);
-	if (sp != NULL)
-		ShowPerInfo(sp);
-
-	sp = TBLSearch(&mytbl, 641106);
-	if (sp != NULL)
-		ShowPerInfo(sp);
-
-	rp = TBLDelete(&mytbl, 990209);
-	if (rp != NULL)
-		delete rp;
-
-	rp = TBLDelete(&mytbl, 960609);
-	if (rp != NULL)
-		delete rp;
-
-	rp = TBLDelete(&mytbl, 641106);
-	if (rp != NULL)
-		delete rp;
+	ShowGraphEdgeInfo(p);
+	GraphDestroy(p);
 
 	return 0;
 }
